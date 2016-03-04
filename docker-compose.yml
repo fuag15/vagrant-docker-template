@@ -1,0 +1,14 @@
+tornado_websocket:
+  build: ./tornadowebsocket
+  links:
+    - database
+  ports: 
+    - "80:80"
+  volumes:
+    - ./tornadowebsocket:/opt/tornadowebsocket/
+
+database:
+  image: mongo
+  expose:
+    - "27017"
+  restart: always
