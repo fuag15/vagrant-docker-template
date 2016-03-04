@@ -75,9 +75,7 @@ class MongoWebsocketHandler(WebSocketHandler):
                 lambda document: self.write_message(document.get(command_parts[1])
                                                     if document 
                                                     else 'null'),
-                lambda motor_error: self.write_message(repr(motor_error)
-                                                      )
-               )
+                lambda motor_error: self.write_message(repr(motor_error)))
 
         elif command_parts[0] == 'set' and len(command_parts) > 2:
             self.valid_messages_recieved += 1
@@ -88,9 +86,7 @@ class MongoWebsocketHandler(WebSocketHandler):
                                                  )
                 },
                 lambda _: self.write_message('ok'),
-                lambda motor_error: self.write_message(repr(motor_error)
-                                                      )
-               )
+                lambda motor_error: self.write_message(repr(motor_error)))
 
     def on_close(self):
         """

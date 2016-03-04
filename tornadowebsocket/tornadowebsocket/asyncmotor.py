@@ -38,8 +38,7 @@ async def find_one(database,
         :class:`Callable`
     """
     try:
-        success_callback(await database.find_one(query)
-                        )
+        success_callback(await database.find_one(query))
     except Exception as motor_error:
         error_callback(motor_error)
 
@@ -77,7 +76,6 @@ async def insert(database,
         :class:`Callable`
     """
     try:
-        success_callback(await database.insert(data)
-                        )
+        success_callback(await database.insert(data))
     except Exception as motor_error:
         error_callback(motor_error)

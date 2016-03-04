@@ -23,7 +23,6 @@ class ConnectionsHandler(RequestHandler):
                                  ).microseconds / 1000, 
                     'messages': handler_instance.valid_messages_recieved}
                    for handler_instance 
-                   in self.settings['active_mongo_websocket_handlers']]
-                 ))
+                   in self.settings['active_mongo_websocket_handlers']]))
 
         self.finish()
